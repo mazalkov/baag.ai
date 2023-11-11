@@ -36,7 +36,7 @@ st.header("Get Started with baag.ai")
 st.markdown(
     """
 Interested in transforming your RFP process? 
-[Sign up now](#) for early access or [contact us](#) for more information.
+[Sign up now](https://baag-ai.carrd.co/) for early access or [contact us](#) for more information.
 """
 )
 
