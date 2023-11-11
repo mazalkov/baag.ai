@@ -8,7 +8,8 @@ from keys import OPEN_API_KEY
 openai.api_key = OPEN_API_KEY
 
 # Define the model you want to use
-model_name = "text-davinci-003"
+MODEL_NAME = "text-davinci-003"
+MAX_TOKENS = 100
 
 # Page Configuration
 st.set_page_config(page_title="PDF Summarizer", page_icon=":arrow_up:", layout="wide")
@@ -25,9 +26,9 @@ def summarize_pdf_text(pdf_text: str) -> str:
 
         # Call the OpenAI API to summarize
         response = openai.Completion.create(
-            model=model_name,
-            prompt=f"Summarize this document: {pdf_text}",
-            max_tokens=150,  # Adjust based on your needs
+            model=MODEL_NAME,
+            prompt=f"Summarize this document with {MAX_TOKENS} max tokens: {pdf_text}",
+            max_tokens=MAX_TOKENS,  # Adjust based on your needs
         )
         return response.choices[0].text.strip()
     except Exception as e:
